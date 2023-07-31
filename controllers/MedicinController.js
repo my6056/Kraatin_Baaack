@@ -67,6 +67,10 @@ module.exports.DeleteMedicin = async (req, res) => {
         message: "Medicin Not Available ",
       });
     }
+    return res.json({
+      status: true,
+      message: "Selected Medicin Deleted .",
+    });
   } catch (error) {
     return res.json({
       status: false,
