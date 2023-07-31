@@ -56,3 +56,22 @@ module.exports.GetMedicins = async (req, res) => {
     });
   }
 };
+
+module.exports.DeleteMedicin = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deleteMedicin = await MedicinModel.findByIdAndDelete(id);
+    if (!deleteMedicin) {
+      return res.json({
+        status: false,
+        message: "Medicin Not Available ",
+      });
+    }
+  } catch (error) {
+    return res.json({
+      status: false,
+      message: "Internal Server Error !",
+    });
+  }
+};
+
