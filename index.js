@@ -19,13 +19,13 @@ app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(cors());
 // Add a middleware to explicitly allow the required headers
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.FRONT_END_HOME_URL);
-  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", process.env.FRONT_END_HOME_URL);
+//   res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   next();
+// });
 
 /* _____________________________________MIDDLEWARE END ______________________________________________*/
 
